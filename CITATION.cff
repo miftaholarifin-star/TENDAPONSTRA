@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Jika menggunakan TENDAPONSTRA untuk kepentingan akademik, cantumkan para pencipta berikut."
+title: "TENDAPONSTRA: Platform Sistem Pemantauan Mobilitas Berbasis Telemetri IoT LoRaWAN dan Real-Time Risk Classification"
+type: software
+version: 1.0.0
+date-released: 2026-08-21
+authors:
+  - family-names: Salsabila
+    given-names: Shabrina
+  - family-names: Simarmata
+    given-names: Enjilika Desi Nadear
+  - family-names: Arifin
+    given-names: Miftahol
+  - family-names: Kasanah
+    given-names: Yulinda Uswatun
+  - family-names: Qisthani
+    given-names: Nabila Noor
+  - family-names: Arini
+    given-names: Ratih Windu
+repository-code: "https://github.com/miftaholarifin-star/TENDAPONSTRA"
+license: LicenseRef-Proprietary
+

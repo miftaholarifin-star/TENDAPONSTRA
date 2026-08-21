@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Dashboard pemantauan telemetri dan risiko TENDAPONSTRA"
+    />
+    <title>TENDAPONSTRA | Dashboard Pemantauan</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">PLATFORM PEMANTAUAN MOBILITAS</p>
+        <h1>TENDAPONSTRA</h1>
+        <p class="subtitle">Telemetri IoT LoRaWAN dan klasifikasi risiko real-time</p>
+      </div>
+      <div id="api-status" class="api-status offline">API belum diperiksa</div>
+    </header>
+
+    <main>
+      <section class="status-grid" aria-label="Ringkasan status perangkat">
+        <article class="status-card primary">
+          <span>Status Risiko</span>
+          <strong id="risk-status">BELUM ADA DATA</strong>
+        </article>
+        <article class="status-card">
+          <span>Jarak Depan</span>
+          <strong><span id="distance-value">-</span> cm</strong>
+        </article>
+        <article class="status-card">
+          <span>Kemiringan</span>
+          <strong><span id="tilt-value">-</span>°</strong>
+        </article>
+        <article class="status-card">
+          <span>Baterai</span>
+          <strong><span id="battery-value">-</span>%</strong>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">SIMULATOR TELEMETRI</p>
+              <h2>Kirim Data Perangkat</h2>
+            </div>
+            <span class="device-badge">TDP-001</span>
+          </div>
+
+          <form id="telemetry-form">
+            <label>
+              Jarak halangan depan (cm)
+              <input id="distance" type="number" min="0" value="150" required />
+            </label>
+            <label>
+              Kemiringan (derajat)
+              <input id="tilt" type="number" min="-180" max="180" value="5" required />
+            </label>
+            <label>
+              Baterai (persen)
+              <input id="battery" type="number" min="0" max="100" value="80" required />
+            </label>
+            <label class="checkbox-label">
+              <input id="emergency" type="checkbox" />
+              Tombol darurat aktif
+            </label>
+            <button type="submit">Proses Telemetri</button>
+          </form>
+        </article>
+
+        <article class="panel decision-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">HASIL KLASIFIKASI</p>
+              <h2>Keputusan Risiko</h2>
+            </div>
+          </div>
+          <div id="decision-box" class="decision empty">
+            <span id="decision-label">Menunggu data</span>
+            <p id="decision-reason">
+              Isi parameter telemetri, lalu tekan tombol proses.
+            </p>
+          </div>
+          <div class="thresholds">
+            <h3>Ambang Default</h3>
+            <ul>
+              <li>Bahaya jarak: kurang dari 50 cm</li>
+              <li>Peringatan jarak: 50 sampai 100 cm</li>
+              <li>Bahaya kemiringan: minimal 60°</li>
+              <li>Peringatan baterai: kurang dari 30%</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <p class="safety-note">
+        TENDAPONSTRA mendukung pemantauan. Sistem tidak menggantikan pelatihan
+        orientasi dan mobilitas, pendampingan manusia, atau prosedur darurat.
+      </p>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
