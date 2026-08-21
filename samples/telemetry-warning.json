@@ -1,0 +1,10 @@
+{
+  "device_id": "TDP-001",
+  "timestamp": "2026-08-21T10:01:00+07:00",
+  "distance_front_cm": 75,
+  "distance_side_cm": 110,
+  "tilt_degree": 8,
+  "battery_percent": 25,
+  "emergency_button": false
+}
+
